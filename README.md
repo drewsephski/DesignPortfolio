@@ -1,2 +1,2 @@
 # DesignPortfolio
-## Just a developers design :)
+## Just a developers design
