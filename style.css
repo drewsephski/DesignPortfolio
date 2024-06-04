@@ -1,0 +1,331 @@
+:root {
+    --text-01: #45413E;
+    --light-01: #F9F9F9;
+    --light-02: #FFFFFF;
+    --brand-01: #1865f5;
+    --brand-02: #F4CFC6;
+    --card-hover: 0px 4px 24px rgba(0, 0, 0, 0.15);
+    --card-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    --hover-timing: all 0.2s ease;
+    --nav-card-size: 240px;
+
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Google Sans', sans-serif;
+    font-weight: 500;
+    transition: var(--hover-timing);
+    background: var(--light-01);
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+header {
+    height: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.banner {
+    background: var(--brand-01);
+    color: var(--light-01);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    color: var(--text-01);
+    font-weight: 600;
+    height: 64px;
+    background: var(--light-01);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    :root {
+        --pg-margin: 10px;
+    }
+
+    /* Use the custom property */
+    .element {
+        margin: var(--pg-margin);
+    }
+
+    padding: 0 var(--pg-margin);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+nav ul.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+nav .navigation-menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--text-01);
+}
+
+nav .navigation-menu > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .navigation-menu > li > a {
+    position: relative;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+nav .navigation-menu > li:hover ul.subnav {
+    visibility: visible;
+    opacity: 1;
+    top: 64px;
+}
+
+nav .navigation-menu > li > ul.subnav {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 66px;
+    background: var(--light-01);
+    box-shadow: var(--card-hover);
+    border-radius: 12px;
+    opacity: 0;
+    transition: var(--hover-timing);
+}
+
+nav > #logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 8px;
+    line-height: 100%;
+}
+
+nav > #logo > span {
+    font-size: 32px;
+}
+
+nav > #utility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+.card-large,
+.card-med {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: var(--hover-timing);
+    cursor: pointer;
+}
+
+.card-large {
+    box-shadow: var(--card-shadow);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-large:hover {
+    box-shadow: var(--card-hover);
+    transform: scale(1.01);
+}
+
+.card-med:hover .card-image {
+    transform: scale(1.01);
+}
+
+.card-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--hover-timing);
+}
+
+.card-large > .card-image {
+    aspect-ratio: 3/2;
+}
+
+.card-image > img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: contain;
+}
+
+.card-large a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card-large > .card-image > a {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.card-large > ul {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 8px;
+    flex: 1;
+    color: var(--text-01);
+    padding: 0 40px 40px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.card-large > ul > li a {
+    line-height: 32px;
+    font-size: 14px;
+}
+
+.card-large#sup-dog,
+.card-med#sup-dog > .card-image {
+    background: linear-gradient(45deg, #463631 0%, #976C5B 100%);
+}
+
+button.btn-outline {
+    color: var(--light-01);
+    border-color: var(--light-01);
+}
+
+.card-large#sup-cat,
+.card-med#sup-cat > .card-image {
+    background: linear-gradient(45deg, #F6AE6C 0%, #ECBD73 100%);
+}
+
+.card-large#sup-bird,
+.card-med#sup-bird > .card-image {
+    background: linear-gradient(45deg, #EFEFEF 0%, #F2F2F2 100%);
+}
+
+.card-large#sup-fish,
+.card-med#sup-fish > .card-image {
+    background: linear-gradient(45deg, #1E4782 0%, #709DDF 100%);
+}
+
+.card-large.card-dark a,
+.card-large.card-dark > ul {
+    color: var(--text-01);
+}
+
+.card-large.card-light a,
+.card-large.card-light > ul {
+    color: var(--light-01);
+}
+
+button {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 12px 24px;
+    border-radius: 48px;
+    display: flex;
+    flex-direction: row;
+    grid-gap: 8px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+button.btn-outline-light {
+    color: var(--light-01);
+    background: none;
+    border: 2px solid var(--light-01);
+}
+
+button.btn-outline-dark {
+    color: var(--text-01);
+    background: none;
+    border: 2px solid var(--text-01);
+}
+
+button.btn-filled-dark {
+    color: var(--light-01);
+    background: var(--text-01);
+    border: 2px solid var(--text-01);
+}
+
+.btn-outline-dark:hover {
+    background: var(--text-01);
+    border: 2px solid var(--text-01);
+}
+
+.btn-outline-light:hover {
+    background: var(--light-01);
+    border: 2px solid var(--light-01);
+    color: var(--text-01);
+}
+
+button:hover,
+.btn-outline-dark.btn-hover-color:hover {
+    color: var(--light-01);
+    border: 2px solid var(--brand-01);
+    background: var(--brand-01);
+    transition: var(--hover-timing);
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--light-02);
+    padding: 20px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--text-01);
+    transition: var(--hover-timing);
+}
+
+footer a:hover {
+    color: var(--brand-01);
+}
