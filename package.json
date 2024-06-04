@@ -7,10 +7,8 @@
   "main": "index.js",
   "name": "designportfolio",
   "private": true,
-  {
   "scripts": {
-    "start": "run"
-  }
+    "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "version": "1.0.0"
