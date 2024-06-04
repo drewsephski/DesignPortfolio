@@ -1,15 +1,15 @@
 {
+  "name": "designportfolio",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "description": "",
-  "main": "index.js",
-  "name": "designportfolio",
-  "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "1.0.0"
+    "test": "react-scripts test",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  }
 }
